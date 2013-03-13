@@ -18,7 +18,7 @@ module Warden
 
   module Mixins::Common
     def request
-      @request ||= ActionDispatch.Request.new(env)
+      @request ||= ActionDispatch::Request.new(env)
     end
 
     def cookies
