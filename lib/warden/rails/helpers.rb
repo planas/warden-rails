@@ -30,6 +30,7 @@ module Warden
       end
 
       def logged_in?(scope = nil)
+        scope ||= warden.config.default_scope
         warden.authenticated?(scope)
       end
 
