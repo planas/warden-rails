@@ -4,7 +4,7 @@ module Warden
       extend ActiveSupport::Concern
 
       included do
-        helper_method :warden, :logged_in?, :logged_user
+        helper_method :warden, :logged_in?, :logged_user, :current_user
       end
 
       def warden
@@ -37,6 +37,8 @@ module Warden
       def logged_user(opts = {})
         warden.user(opts)
       end
+
+      alias_method :current_user, :logged_user
 
       def set_user(user, opts = {})
         warden.set_user(user, opts)
