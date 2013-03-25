@@ -28,6 +28,10 @@ module Warden
     def reset_session!
       request.reset_session
     end
+
+    def raw_session
+      request.session
+    end
   end
 end
 
