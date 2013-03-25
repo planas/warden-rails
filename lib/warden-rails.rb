@@ -2,6 +2,10 @@ require 'warden'
 require 'rails'
 
 module Warden
+  # Specify Rails assets path for asset_request?
+  mattr_accessor :asset_paths
+  @@asset_paths = %w( assets )
+
   # A session serializer that should suit most cases
   # and avoids CookieOverflow on Rails produced by the
   # default Warden's serializer
